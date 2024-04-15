@@ -40,6 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.left = randomLeft + "px";
   });
 
+  defaultButton.addEventListener("click", () => {
+    const modal = document.getElementById("modal");
+    const modalWidth = modal.offsetWidth;
+    const modalHeight = modal.offsetHeight;
+
+    let randomTop = Math.random() * (window.innerHeight - modalHeight);
+    let randomLeft = Math.random() * (window.innerWidth - modalWidth);
+
+    if (randomTop < 0) {
+      randomTop = 0;
+    }
+    if (randomLeft < 0) {
+      randomLeft = 0;
+    }
+
+    modal.style.top = randomTop + "px";
+    modal.style.left = randomLeft + "px";
+  });
   const outlineButton = document.querySelector(".outline-button");
   outlineButton.addEventListener("click", () => {
     const defaults = {
